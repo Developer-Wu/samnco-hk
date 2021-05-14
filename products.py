@@ -1,10 +1,13 @@
 import contentful
 from flask_paginate import Pagination, get_page_parameter
 from flask import render_template, request
+from decouple import config
 
-SPACE_ID = '0snbon2lhkq6'
-ACCESS_TOKEN = '46di05bpPVP8VaAybkYp9TNqXeN_4frcbrFyEvZytg4'
+########## CONTENTFUL ############
+SPACE_ID = config('SPACE_ID')
+ACCESS_TOKEN = config('ACCESS_TOKEN')
 client = contentful.Client(SPACE_ID, ACCESS_TOKEN)
+########## CONTENTFUL ############
 
 PRODUCT_LIMIT = 36
 
@@ -36,8 +39,3 @@ class Products:
                                    'skip': skip_num,
                                   'fields.category[match]':query})
         return products
-
-
-
-
-

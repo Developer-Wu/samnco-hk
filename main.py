@@ -5,21 +5,16 @@ import contentful
 from forms import SearchBar
 from math import ceil
 from products import Products
+from decouple import config
 
 
 
-########### CONTENTFUL #############
 
-SPACE_ID = '0snbon2lhkq6'
-ACCESS_TOKEN = '46di05bpPVP8VaAybkYp9TNqXeN_4frcbrFyEvZytg4'
-client = contentful.Client(SPACE_ID, ACCESS_TOKEN)
-
-########### CONTENTFUL ############
 
 get_products = Products()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'top-secret'
+app.config['SECRET_KEY'] = config('SECRET_KEY')
 # mod = Blueprint('product_page', __name__)
 # app.register_blueprint(mod)
 
