@@ -19,6 +19,17 @@
             <h4 class="entertainment"><a href="{{url_for('store', query='lifestyle')}}">Lifestyle</a></h4>
 
           </div>
+                        <article class="product {{product.category}} {{product.category2}}">
+        <div class="img-container">
+        <img src="{{ product | get_image }}" class="" alt="{{product.title}}">
+          <button class="bag-btn" data-id={{product.id}}><i class="fas fa-shopping-cart"></i><a href="">Details</a>
+          </button>
+        </div>
+        <h3>{{product.title}}</h3>
+        <h4>{{product.category}}</h4>
+        <h4>{{product.category2}}</h4>
+        <h4>{{product.price}}</h4>
+      </article>
 
         </section>
         <div class="page-numbers">
@@ -32,6 +43,7 @@
             <h2>your cart</h2>
             <div class="cart-content">
               <!--cart item -->
+
 
 
               <!--end of cart item-->

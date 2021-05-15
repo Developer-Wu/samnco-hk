@@ -70,9 +70,9 @@ def store(**kwargs):
 
         products = get_products.all_products(skip_num=skip_num)
 
+
     page = request.args.get(get_page_parameter(), type=int, default=1)
     pagination = Pagination(show_single_page= True,page=page, per_page=37, total=int(products.total), search=False, record_name='products')
-
     # pages = ceil(products.total/PRODUCT_LIMIT) # Total Number of pages
 
     return render_template('store.html', products=products, search_form=search_form, pagination=pagination)
@@ -87,7 +87,9 @@ def store(**kwargs):
 
 @app.route('/detail/<product_id>')
 def get_product_detail(product_id):
-    return render_template('detail.html')
+    product = get_products.get_product_detail(product_id)
+
+    return render_template('detail.html', product=product)
 
 
 

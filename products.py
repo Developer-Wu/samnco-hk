@@ -39,3 +39,7 @@ class Products:
                                    'skip': skip_num,
                                   'fields.category[match]':query})
         return products
+
+    def get_product_detail(self, product_id):
+        product = client.entry({product_id})
+        return product
