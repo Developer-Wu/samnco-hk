@@ -55,6 +55,19 @@
               <span>seasonal</span>
             </div> -->
             <div class="discount-container">
+                {% for product in products: %}
+            <article class="product {{product.category}} {{product.category2}}">
+        <div class="img-container">
+        <img src="{{ product | get_image }}" class="" alt="{{product.title}}">
+          <button class="bag-btn" data-id={{product.id}}><i class="fas fa-shopping-cart"></i><a href="{{url_for('get_product_detail',product_id=product.id)}}">Details</a>
+          </button>
+        </div>
+        <h3>{{product.title}}</h3>
+        <h4>{{product.category}}</h4>
+        <h4>{{product.category2}}</h4>
+        <h4>{{product.price}}</h4>
+      </article>
+            {% endfor %}
 
                 </div>
             </div>
@@ -63,7 +76,7 @@
           </div>
           <div class="cta-buttons">
             <!-- <button type="button" class="cta-button" name="contact-button">contact</button> -->
-            <a href="store.html"><button type="button" class="cta-button" name="store-button">store</button></a>
+            <a href="{{url_for('store')}}"><button type="button" class="cta-button" name="store-button">store</button></a>
 
 
           </div>

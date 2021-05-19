@@ -43,3 +43,7 @@ class Products:
     def get_product_detail(self, product_id):
         product = client.entry({product_id})
         return product
+    def get_discount_items(self):
+        products = client.entries({'content_type': 'samAndCoProducts',
+                                    'fields.category2[match]': 'discount'})
+        return products

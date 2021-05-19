@@ -1018,22 +1018,38 @@ h2 {
 .img-container {
   position: relative;
   overflow: hidden;
-  /* &:hover .bag-btn {
-    transform: translate(0%);
-  } */
 }
 .img-container img {
   display: block;
   width: 100%;
   min-height: 12rem;
 }
+.img-container:hover .bag-btn {
+  transform: translate(0%);
+}
 .img-container .bag-btn {
-  background-color: #f7e1d3;
+  position: absolute;
+  top: 70%;
+  right: 0;
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  transform: translateX(101%);
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: #473D3C;
   color: #FFF;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #473D3C;
   font-size: 0.9em;
+}
+.img-container .bag-btn a {
+  text-decoration: none;
+  color: #f7e1d3;
+}
+.img-container .bag-btn i {
+  color: #f7e1d3;
 }
 
 .cta-buttons {

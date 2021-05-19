@@ -31,7 +31,7 @@
             <article class="product {{product.category}} {{product.category2}}">
         <div class="img-container">
         <img src="{{ product | get_image }}" class="" alt="{{product.title}}">
-          <button class="bag-btn" data-id={{product.id}}><i class="fas fa-shopping-cart"></i><a href="">Details</a>
+          <button class="bag-btn" data-id={{product.id}}><i class="fas fa-shopping-cart"></i><a href="{{url_for('get_product_detail',product_id=product.id)}}">Details</a>
           </button>
         </div>
         <h3>{{product.title}}</h3>

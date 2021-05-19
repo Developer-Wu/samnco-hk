@@ -28,7 +28,13 @@ def get_image(input):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    products = get_products.get_discount_items()
+
+    return render_template('index.html', products= products)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/shop', methods=['GET','POST'])
 @app.route('/shop/<query>', methods=['GET','POST'])
@@ -88,8 +94,15 @@ def store(**kwargs):
 @app.route('/detail/<product_id>')
 def get_product_detail(product_id):
     product = get_products.get_product_detail(product_id)
+    final= []
+    try:
+        result = [product.image[index]['secure_url'] for index in range(1, len(product.image))]
+        for image in result:
+            final.append(image)
+    except AttributeError:
+        pass
 
-    return render_template('detail.html', product=product)
+    return render_template('detail.html', product=product, image_list = final)
 
 
 

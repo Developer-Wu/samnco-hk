@@ -920,13 +920,16 @@ h2 {
   max-width: inherit;
 }
 .product-categories h4 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  color: #473D3C;
   text-align: center;
 }
 .product-categories h4:hover {
   cursor: pointer;
+}
+.product-categories h4 a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #473D3C;
 }
 
 .pagination {
@@ -978,6 +981,10 @@ h2 {
   font-weight: 500;
   color: #473D3C;
   font-size: 0.9em;
+}
+.img-container a {
+  text-decoration: none;
+  color: #473D3C;
 }
 
 .bag-btn {

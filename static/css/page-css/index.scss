@@ -174,14 +174,30 @@ position: relative;
     width: 100%;
     min-height: 12rem;
   }
-  /* &:hover .bag-btn {
+   &:hover .bag-btn {
     transform: translate(0%);
-  } */
+  }
   .bag-btn {
-    background-color: $style-color;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    transform: translateX(101%);
+    transition: all 0.5s;
+    cursor: pointer;
+    background-color: $text-color;
     color: #FFF;
     @include font-style($font, 500, $text-color);
     font-size: 0.9em;
+    a {
+      text-decoration: none;
+      color: $style-color;
+    }
+    i {
+      color: $style-color;
+    }
   }
 
 

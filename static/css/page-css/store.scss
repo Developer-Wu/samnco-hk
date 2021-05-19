@@ -74,10 +74,14 @@ form {
   max-width: inherit;
 
   h4 {
-    @include font-style($font, 500, $text-color-2);
+
     text-align: center;
     &:hover {
         cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+      @include font-style($font, 500, $text-color-2);
 
     }
 
@@ -138,6 +142,11 @@ position: relative;
     color: #FFF;
     @include font-style($font, 500, $text-color);
     font-size: 0.9em;
+
+  }
+  a {
+    text-decoration: none;
+    color: $text-color
   }
 
 
